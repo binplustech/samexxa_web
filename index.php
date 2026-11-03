@@ -46,8 +46,10 @@
 }
 
 #main .wrap {
-  width: min(1320px, calc(100% - 48px));
+  width: 100%;
+  max-width: 1200px;
   margin-inline: auto;
+  padding: 0 32px;
 }
 
 #main h1,
@@ -1283,9 +1285,11 @@
   border-radius: 12px;
 }
 
-#main .prod-art svg {
-  width: 125px;
-  height: 125px;
+#main .prod-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform .4s ease;
 }
 
@@ -1294,8 +1298,7 @@
   width: 100%;
   height: 100%;
   max-height: 230px;
-  padding: 6px;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform .4s ease;
 }
 
@@ -1478,6 +1481,7 @@
 #main .phone-mock {
   justify-self: center;
   width: 230px;
+  height: 400px;
   padding: 10px;
   background: linear-gradient(145deg, #69746d, #151c18);
   border: 2px solid #69746d;
@@ -1491,60 +1495,12 @@
   transform: rotate(0deg) translateY(-5px);
 }
 
-#main .phone-mock .screen {
-  min-height: 380px;
-  padding: 20px 13px;
-  overflow: hidden;
-  background: #fbfaf7;
+#main .phone-mock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 26px;
-}
-
-#main .phone-mock .app-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  color: #262822;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-#main .phone-mock .app-bar img {
-  width: 27px;
-  height: 27px;
-  object-fit: contain;
-}
-
-#main .phone-mock .row {
-  height: 45px;
-  margin-bottom: 13px;
-  background: linear-gradient(90deg, #ece8df, #f3f0e9);
-  border-radius: 9px;
-}
-
-#main .phone-mock .grid2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 9px;
-  margin-bottom: 18px;
-}
-
-#main .phone-mock .grid2 div {
-  height: 75px;
-  background: #f0e3d2;
-  border-radius: 9px;
-}
-
-#main .phone-mock .grid2 div:nth-child(2) {
-  background: #e1ece5;
-}
-
-#main .phone-mock .grid2 div:nth-child(3) {
-  background: #e8e8f0;
-}
-
-#main .phone-mock .grid2 div:nth-child(4) {
-  background: #f3e6e6;
+  display: block;
 }
 
 /* ==========================================
@@ -1565,16 +1521,68 @@
   margin: 0;
 }
 
+#main .test-slider {
+  position: relative;
+}
+
 #main .test-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
+#main .test-grid::-webkit-scrollbar {
+  display: none;
+}
+
+#main .test-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(25,25,25,.12);
+  background: rgba(255,255,255,.92);
+  color: #26241f;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+#main .test-arrow:hover {
+  background: #26241f;
+  color: #fff;
+  border-color: #26241f;
+}
+
+#main .test-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+#main .test-prev { left: -8px; }
+#main .test-next { right: -8px; }
+
+#main .test-arrow.is-disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+
+@media (min-width: 1025px) {
+  #main .test-arrow { display: none; }
+}
+
 #main .test-card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 100%;
   min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   padding: 28px;
   background: #fff;
   border: 1px solid #eeece7;
@@ -1909,9 +1917,9 @@
     border-radius: 9px;
   }
 
-  #main .prod-art svg {
-    width: 85px;
-    height: 85px;
+  #main .prod-art img {
+    max-height: 145px;
+    object-fit: cover;
   }
 
   #main .prod-tag {
@@ -1993,8 +2001,8 @@
     transform: none;
   }
 
-  #main .phone-mock .screen {
-    min-height: 335px;
+  #main .phone-mock img {
+    border-radius: 22px;
   }
 
   #main .test-head {
@@ -2003,11 +2011,22 @@
   }
 
   #main .test-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  #main .test-grid::-webkit-scrollbar {
+    display: none;
   }
 
   #main .test-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     padding: 22px;
   }
 
@@ -2020,7 +2039,7 @@
 
 @media (max-width: 380px) {
   #main .wrap {
-    width: calc(100% - 24px);
+    width: calc(100% - 32px);
   }
 
   #main .hero h1 {
@@ -2285,6 +2304,31 @@
       // Single endpoint managed by the admin panel. Swap for your API URL.
       api: 'api/home'
     };
+
+    function initTestimonials() {
+      var testGrid = document.getElementById('testGrid');
+      var testPrev = document.getElementById('testPrev');
+      var testNext = document.getElementById('testNext');
+      if (!testGrid || !testPrev || !testNext) return;
+      function slideTest(dir) {
+        var amount = testGrid.clientWidth * dir;
+        testGrid.scrollBy({ left: amount, behavior: 'smooth' });
+      }
+      testPrev.addEventListener('click', function () { slideTest(-1); });
+      testNext.addEventListener('click', function () { slideTest(1); });
+      function syncArrows() {
+        var maxScroll = testGrid.scrollWidth - testGrid.clientWidth;
+        testPrev.classList.toggle('is-disabled', testGrid.scrollLeft <= 4);
+        testNext.classList.toggle('is-disabled', testGrid.scrollLeft >= maxScroll - 4);
+      }
+      testGrid.addEventListener('scroll', syncArrows);
+      testGrid.addEventListener('scrollend', syncArrows);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTestimonials);
+    } else {
+      initTestimonials();
+    }
   </script>
   <script src="assets/home.js" defer></script>
 
@@ -2301,13 +2345,7 @@
         <div class="prod-card">
           <span class="prod-tag">-30%</span>
           <div class="prod-art" style="background:#EAF1F6;">
-            <svg viewBox="0 0 100 100" fill="none">
-              <path d="M32 46a10 10 0 0 1 10-10" stroke="#191919" stroke-width="5" fill="none" stroke-linecap="round"/>
-              <circle cx="30" cy="52" r="10" fill="#F37828"/>
-              <path d="M68 46a10 10 0 0 0-10-10" stroke="#191919" stroke-width="5" fill="none" stroke-linecap="round"/>
-              <circle cx="70" cy="52" r="10" fill="#F37828"/>
-              <rect x="40" y="60" width="20" height="16" rx="4" fill="#191919"/>
-            </svg>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=700&fit=crop&q=80&fm=jpg" alt="TrueBeat Wireless Earbuds">
           </div>
           <h4>TrueBeat Wireless Earbuds</h4>
           <div class="stars">
@@ -2325,10 +2363,7 @@
         <div class="prod-card">
           <span class="prod-tag">-20%</span>
           <div class="prod-art" style="background:#F6EBEC;">
-            <svg viewBox="0 0 100 100" fill="none">
-              <path d="M18 66c8-4 16-4 22 0s14 4 22 0 16-4 20 0" stroke="#191919" stroke-width="5" fill="none" stroke-linecap="round"/>
-              <path d="M22 62c2-14 10-24 20-26 8-1 8 6 16 6 8 0 10-6 16-4 8 3 10 14 8 24z" fill="#C97B84"/>
-            </svg>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=700&fit=crop&q=80&fm=jpg" alt="Stride Running Sneakers">
           </div>
           <h4>Stride Running Sneakers</h4>
           <div class="stars">
@@ -2346,12 +2381,7 @@
         <div class="prod-card">
           <span class="prod-tag">-15%</span>
           <div class="prod-art" style="background:#FDF3E4;">
-            <svg viewBox="0 0 100 100" fill="none">
-              <rect x="34" y="24" width="32" height="40" rx="10" fill="#191919"/>
-              <rect x="38" y="30" width="24" height="24" rx="12" fill="#E3A72E"/>
-              <rect x="46" y="64" width="8" height="8" fill="#191919"/>
-              <path d="M40 76c4-4 16-4 20 0" stroke="#191919" stroke-width="4" fill="none" stroke-linecap="round"/>
-            </svg>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=700&fit=crop&q=80&fm=jpg" alt="Pulse Smartwatch">
           </div>
           <h4>Pulse Smartwatch</h4>
           <div class="stars">
@@ -2369,11 +2399,7 @@
         <div class="prod-card">
           <span class="prod-tag">-25%</span>
           <div class="prod-art" style="background:#E9F1EF;">
-            <svg viewBox="0 0 100 100" fill="none">
-              <path d="M30 30h40l-4 8H34z" fill="#2F6F6B"/>
-              <path d="M32 38h36l-5 34a5 5 0 0 1-5 4H42a5 5 0 0 1-5-4z" fill="#3F6C4F"/>
-              <rect x="44" y="46" width="12" height="18" rx="2" fill="#F6F8F7"/>
-            </svg>
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=700&fit=crop&q=80&fm=jpg" alt="WhipMate Mixer Grinder">
           </div>
           <h4>WhipMate Mixer Grinder</h4>
           <div class="stars">
@@ -2411,13 +2437,7 @@
       </div>
 
       <div class="phone-mock" aria-hidden="true">
-        <div class="screen">
-          <div class="app-bar"><img src="/assets/logo.png" alt=""><span>Samexxa</span></div>
-          <div class="row"></div>
-          <div class="grid2"><div></div><div></div><div></div><div></div></div>
-          <div class="row"></div>
-          <div class="row" style="height:60px;"></div>
-        </div>
+        <img src="assets/hero/welcome-marketplace.jpg" alt="Samexxa app shopping on a smartphone">
       </div>
     </div>
   </section>
@@ -2428,7 +2448,11 @@
       <div class="test-head">
         <h2>What shoppers are saying</h2>
       </div>
-      <div class="test-grid">
+      <div class="test-slider">
+        <button class="test-arrow test-prev" id="testPrev" type="button" aria-label="Previous shopper story">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="test-grid" id="testGrid">
 
         <div class="test-card">
           <div class="test-stars">
@@ -2475,6 +2499,9 @@
           </div>
         </div>
 
+        <button class="test-arrow test-next" id="testNext" type="button" aria-label="Next shopper story">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </section>

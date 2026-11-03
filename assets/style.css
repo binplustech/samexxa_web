@@ -298,9 +298,13 @@ footer .col a:hover{ color:var(--mustard); }
 .footer-bottom .fb-brand img{ height:20px; }
 @media (max-width:900px){
   .footer-top{ grid-template-columns:1fr 1fr; row-gap:36px; }
+  .footer-brand{ grid-column:1 / -1; }
+  .newsletter{ grid-column:1 / -1; }
 }
 @media (max-width:560px){
-  .footer-top{ grid-template-columns:1fr; }
+  .footer-top{ grid-template-columns:1fr 1fr; row-gap:30px; }
+  .footer-brand{ grid-column:1 / -1; }
+  .newsletter{ grid-column:1 / -1; }
 }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
