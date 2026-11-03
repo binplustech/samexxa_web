@@ -1,27 +1,17 @@
-# Samexxa SEO-friendly clean URLs
-# Apache 2.4+ / cPanel
+RewriteEngine On
 
-DirectoryIndex index.html
-Options -Indexes
+# Redirect direct .php URLs to clean URLs
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
+# Redirect direct .html URLs to clean URLs
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
-    # 301 redirect old .html URLs to the canonical clean URL.
-    # This rule must run before the real-file check.
-    RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
-    RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+# Load PHP if it exists
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
 
-    # Keep existing files and directories (CSS, JS, images, etc.) working.
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^ - [L]
-
-    # Internally serve /about from about.html, /contact from contact.html, etc.
-    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-    RewriteRule ^(.+?)/?$ $1.html [L]
-
-    # Homepage.
-    RewriteRule ^$ index.html [L]
-</IfModule>
+# Otherwise load HTML
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
