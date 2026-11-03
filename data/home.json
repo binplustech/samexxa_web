@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-03T09:00:00Z",
+  "hero": {
+    "autoplayMs": 5000,
+    "slides": [
+      {
+        "id": "groceries",
+        "image": "assets/hero/slide-1.jpg",
+        "eyebrow": "Fresh picks",
+        "title": "Fresh groceries in 45 minutes",
+        "text": "Handpicked produce and daily essentials from stores around you.",
+        "button": { "label": "Shop groceries", "link": "#categories" }
+      },
+      {
+        "id": "fashion",
+        "image": "assets/hero/slide-2.jpg",
+        "eyebrow": "Trend edit",
+        "title": "New season, new favourites",
+        "text": "Fashion finds from local boutiques and trusted brands.",
+        "button": { "label": "Explore fashion", "link": "#categories" }
+      },
+      {
+        "id": "electronics",
+        "image": "assets/hero/slide-3.jpg",
+        "eyebrow": "Tech drop",
+        "title": "Tech that keeps up with you",
+        "text": "Headphones, wearables and more at marketplace prices.",
+        "button": { "label": "Shop electronics", "link": "#categories" }
+      },
+      {
+        "id": "home",
+        "image": "assets/hero/slide-4.jpg",
+        "eyebrow": "Home upgrade",
+        "title": "Make every room feel newer",
+        "text": "Kitchen, decor and everyday upgrades for the whole home.",
+        "button": { "label": "Browse home", "link": "#categories" }
+      }
+    ]
+  },
+  "categories": {
+    "heading": "Shop by category",
+    "subheading": "A few of the places Samexxa shoppers start their search.",
+    "items": [
+      { "id": "grocery", "name": "Grocery", "image": "assets/categories/grocery.png", "tone": "#eef7e8", "link": "#categories" },
+      { "id": "electronics", "name": "Electronics", "image": "assets/categories/electronics.png", "tone": "#e8f1f8", "link": "#categories" },
+      { "id": "fashion", "name": "Fashion", "image": "assets/categories/fashion.png", "tone": "#fdeef3", "link": "#categories" },
+      { "id": "home-kitchen", "name": "Home & Kitchen", "image": "assets/categories/home-kitchen.png", "tone": "#fdf4e5", "link": "#categories" },
+      { "id": "beauty", "name": "Beauty", "image": "assets/categories/beauty.png", "tone": "#fceef7", "link": "#categories" },
+      { "id": "sports", "name": "Sports", "image": "assets/categories/sports.png", "tone": "#e9f4ef", "link": "#categories" },
+      { "id": "baby-care", "name": "Baby Care", "image": "assets/categories/baby-care.png", "tone": "#fff2e8", "link": "#categories" },
+      { "id": "automotive", "name": "Automotive", "image": "assets/categories/automotive.png", "tone": "#eef0f5", "link": "#categories" },
+      { "id": "books", "name": "Books", "image": "assets/categories/books.png", "tone": "#f3eefb", "link": "#categories" },
+      { "id": "toys", "name": "Toys", "image": "assets/categories/toys.png", "tone": "#fff8e1", "link": "#categories" }
+    ]
+  },
+  "products": {
+    "heading": "Trending this week",
+    "subheading": "Popular picks across Samexxa's most-shopped categories.",
+    "showPrice": false,
+    "items": [
+      {
+        "id": "earbuds",
+        "name": "TrueBeat Wireless Earbuds",
+        "image": "assets/products/earbuds.svg",
+        "background": "#EAF1F6",
+        "tag": "-30%",
+        "rating": 4.2,
+        "reviews": 860,
+        "price": 1499,
+        "oldPrice": 2199,
+        "link": "#trending"
+      },
+      {
+        "id": "sneakers",
+        "name": "Stride Running Sneakers",
+        "image": "assets/products/sneakers.svg",
+        "background": "#F6EBEC",
+        "tag": "-20%",
+        "rating": 4.6,
+        "reviews": 1200,
+        "price": 1899,
+        "oldPrice": 2399,
+        "link": "#trending"
+      },
+      {
+        "id": "smartwatch",
+        "name": "Pulse Smartwatch",
+        "image": "assets/products/smartwatch.svg",
+        "background": "#FDF3E4",
+        "tag": "-15%",
+        "rating": 4.0,
+        "reviews": 540,
+        "price": 2299,
+        "oldPrice": 2699,
+        "link": "#trending"
+      },
+      {
+        "id": "mixer",
+        "name": "WhipMate Mixer Grinder",
+        "image": "assets/products/mixer.svg",
+        "background": "#E9F1EF",
+        "tag": "-25%",
+        "rating": 4.7,
+        "reviews": 2100,
+        "price": 1349,
+        "oldPrice": 1799,
+        "link": "#trending"
+      }
+    ]
+  }
+}

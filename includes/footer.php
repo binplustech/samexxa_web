@@ -8,16 +8,16 @@
         </a>
         <p>Every need, one Samexxa. A local marketplace for groceries, gadgets, fashion and everything in between.</p>
         <div class="social-row">
-          <a href="#" aria-label="Samexxa on Instagram">
+          <a href="#" aria-label="Samexxa on Instagram" data-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
           </a>
-          <a href="#" aria-label="Samexxa on Facebook">
+          <a href="#" aria-label="Samexxa on Facebook" data-label="Facebook">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg>
           </a>
-          <a href="#" aria-label="Samexxa on X">
+          <a href="#" aria-label="Samexxa on X" data-label="X (Twitter)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
           </a>
-          <a href="#" aria-label="Samexxa on YouTube">
+          <a href="#" aria-label="Samexxa on YouTube" data-label="YouTube">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5v5l4.3-2.5z" fill="currentColor" stroke="none"/></svg>
           </a>
         </div>
@@ -59,7 +59,7 @@
     <div class="footer-bottom">
       <div class="fb-brand">
         <!--<img src="https://samexxa.com/assets/logo.png" alt="">-->
-        <span>© 2026 Samexxa. All rights reserved.</span>
+        <span>© Samexxa. All rights reserved.</span>
       </div>
       <!--<span>Terms, Privacy and Return &amp; Refund content is managed from the Super Admin CMS and shared with the app.</span>-->
     </div>

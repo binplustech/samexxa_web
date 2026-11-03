@@ -1,5 +1,4 @@
-<?php include_once('./includes/header.php'); ?>
-<title>Contact Us — Samexxa</title>
+<?php $pageTitle = 'Contact Us — Samexxa'; $bodyClass = 'page-contact'; include_once('./includes/header.php'); ?>
 <main id="main">
 
   <section class="page-banner">

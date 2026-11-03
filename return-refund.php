@@ -1,5 +1,4 @@
-<?php include_once('./includes/header.php'); ?>
-<title>Return & Refund Policy — Samexxa</title>
+<?php $pageTitle = 'Return & Refund Policy — Samexxa'; $bodyClass = 'page-legal'; include_once('./includes/header.php'); ?>
 <main id="main">
   <section class="page-banner">
     <div class="wrap">

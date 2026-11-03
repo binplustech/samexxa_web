@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="Mixer grinder">
+  <path d="M30 30h40l-4 8H34z" fill="#2F6F6B"/>
+  <path d="M32 38h36l-5 34a5 5 0 0 1-5 4H42a5 5 0 0 1-5-4z" fill="#3F6C4F"/>
+  <rect x="44" y="46" width="12" height="18" rx="2" fill="#F6F8F7"/>
+</svg>

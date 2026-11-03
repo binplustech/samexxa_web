@@ -1,5 +1,4 @@
-<?php include_once('./includes/header.php'); ?>
-<title>Privacy Policy — Samexxa</title>
+<?php $pageTitle = 'Privacy Policy — Samexxa'; $bodyClass = 'page-legal'; include_once('./includes/header.php'); ?>
 <main id="main">
   <section class="page-banner">
     <div class="wrap">

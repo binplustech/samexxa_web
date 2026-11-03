@@ -1,17 +1,16 @@
 RewriteEngine On
 
-# Redirect direct .php URLs to clean URLs
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
-RewriteRule ^(.+)\.php$ /$1 [R=301,L]
-
-# Redirect direct .html URLs to clean URLs
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^(.+)\.html$ /$1 [R=301,L]
-
-# Load PHP if it exists
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.+?)/?$ $1.php [L]
+RewriteRule ^(.*)$ $1.php [L]
 
-# Otherwise load HTML
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+# Redirect /faq to /faq.php
+RewriteRule ^faq$ faq.php [L,NC]
+
+# Optional: redirect other common pages
+RewriteRule ^about-us$ about-us.php [L,NC]
+RewriteRule ^contact-us$ contact-us.php [L,NC]
+RewriteRule ^terms$ terms.php [L,NC]
+RewriteRule ^privacy-policy$ privacy-policy.php [L,NC]
+RewriteRule ^return-refund$ return-refund.php [L,NC]
